@@ -24,14 +24,12 @@ public class Application {
 	
 	/**
 	 * @param args
+	 * @throws SQLException 
+	 * @throws ClassNotFoundException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		
-		Avion avion = new Avion(115, "boeing", "modele", 1234, "bergerac");
-		
-		Pilote pilote = new Pilote(8, "nom", "site");
-		Vol vol = new Vol("T125", avion, Time.valueOf("13:30:45"), Time.valueOf("17:30:00"), pilote, "paris", "bergerac");
-		Requetes.ajouterVol(vol);
+		System.out.println(Requetes.getCategorieById(3));
 	}
 
 }

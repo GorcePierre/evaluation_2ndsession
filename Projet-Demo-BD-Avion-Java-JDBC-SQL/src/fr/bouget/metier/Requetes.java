@@ -355,4 +355,17 @@ public class Requetes {
 		}
 		return categories;
 	}
+	
+	public static Categorie getCategorieById(int i) throws ClassNotFoundException, SQLException {
+		int id = 0;
+		String name = "";
+		
+		String requete	= "SELECT * FROM categorie WHERE id="+i;
+		ResultSet resultat = AccesBD.executerQuery(requete);
+		if(resultat.next()) {
+			id = resultat.getInt("id");
+			name = resultat.getString("name");
+		}
+		return new Categorie(id, name);
+	}
 }
