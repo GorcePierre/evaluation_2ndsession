@@ -30,7 +30,7 @@ public class Application {
 		Avion avion = new Avion(115, "boeing", "modele", 1234, "bergerac");
 		
 		Pilote pilote = new Pilote(8, "nom", "site");
-		Vol vol = new Vol("T124", avion, new Time(7,0,0), new Time(5,0,0), pilote, "paris", "bergerac");
+		Vol vol = new Vol("T125", avion, Time.valueOf("13:30:45"), Time.valueOf("17:30:00"), pilote, "paris", "bergerac");
 		Requetes.ajouterVol(vol);
 	}
 
