@@ -1,25 +1,10 @@
 package fr.mvc.connection;
-/**	=====================================================
- * @author Philippe Bouget
- *	Package : fr.bouget.connection
- *
- * exemple de pilote pour la base de donn�es MySQL :
- * com.mysql.jdbc.Driver (dans le jar)
- * 
- * Connexion � MySQL :
- * 
- * identifiant : root
- * mdp : root
- * url : jdbc:mysql://localhost:3306/bd-avion
-========================================================
- */
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import javax.swing.JOptionPane;
 
 /**
@@ -32,7 +17,7 @@ public class AccesBD {
 	private static String utilisateur = "root";
 	private static String motDePasse = "poupoune12";
 	private static String pilote = "com.mysql.cj.jdbc.Driver";
-	private static String url = "jdbc:mysql://localhost:3306/db_avion?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+	private static String url = "jdbc:mysql://localhost:3306/bd-apprenants?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 
 	/*
 	 * on d�clare un objet de la classe Connection de java.sql Il permet de g�rer la

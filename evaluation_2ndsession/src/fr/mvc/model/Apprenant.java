@@ -1,5 +1,7 @@
 package fr.mvc.model;
 
+import java.sql.Date;
+
 /**
  * Apprenant
  */
@@ -8,20 +10,20 @@ public class Apprenant {
     private int id;
     private String name;
     private String prenom;
-    private String dateDeNaissance;
+    private Date dateDeNaissance;
     private String email;
     private String photo;
 
-    public Apprenant(int id, String name, String prenom, String dateDeNaissance, String email, String photo) {
+    public Apprenant() {
+    }
+
+    public Apprenant(int id, String name, String prenom, Date dateDeNaissance, String email, String photo) {
         this.id = id;
         this.name = name;
         this.prenom = prenom;
         this.dateDeNaissance = dateDeNaissance;
         this.email = email;
         this.photo = photo;
-    }
-
-    public Apprenant() {
     }
 
     public int getId() {
@@ -48,11 +50,11 @@ public class Apprenant {
         this.prenom = prenom;
     }
 
-    public String getDateDeNaissance() {
+    public Date getDateDeNaissance() {
         return this.dateDeNaissance;
     }
 
-    public void setDateDeNaissance(String dateDeNaissance) {
+    public void setDateDeNaissance(Date dateDeNaissance) {
         this.dateDeNaissance = dateDeNaissance;
     }
 
