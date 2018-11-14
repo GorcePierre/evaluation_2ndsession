@@ -6,4 +6,6 @@
   
   création du diagramme de classe.
   
-  méthode agile avec decoupage des taches. 
+  méthode agile avec decoupage des taches.
+  
+  partage des liens pour travail collaboratif.
