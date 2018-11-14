@@ -1,4 +1,4 @@
-# jevaluation Session 2
+# Evaluation Session 2
 
 ## mise en place projet.
 
