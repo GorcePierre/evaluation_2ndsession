@@ -28,17 +28,10 @@ public class Mapping {
 	 */
 	public static Apprenant mapperapprenant(ResultSet resultat) throws SQLException, ClassNotFoundException
 	{
-		Apprenant apprenant = new apprenant();
-		apprenant.setId(resultat.getString("VO_ID"));
+		Apprenant apprenant = new Apprenant();
+		apprenant.setId(resultat.getString(""));
 		// on r�cup�re l'identifiant de l'avion que l'on charge avec son identifiant
-		apprenant.setAvion(Requetes.getAvionById(resultat.getInt("VO_AVION")));
-		apprenant.setSiteDepart(resultat.getString("VO_SITE_DEPART"));
-		apprenant.setHeureDepart(resultat.getTime("VO_HEURE_DEPART"));
-		
-		apprenant.setSiteArrivee(resultat.getString("VO_SITE_ARRIVEE"));
-		apprenant.setHeureArrivee(resultat.getTime("VO_HEURE_ARRIVEE"));
-		// on r�cup�re l'identifiant dupilote que l'on charge avec son identifiant		
-		apprenant.setPilote(Requetes.getPiloteById(resultat.getInt("VO_PILOTE")));	
+		apprenant.setName(Requetes.getName(resultat.getInt("")));
 		
 		return apprenant;
 	}

@@ -11,9 +11,6 @@ import javax.swing.JOptionPane;
 
 import fr.mvc.connection.AccesBD;
 import fr.mvc.metier.Requetes;
-import fr.mvc.model.Avion;
-import fr.mvc.model.Pilote;
-import fr.mvc.model.Vol;
 
 /**
  * @author Philippe
@@ -29,7 +26,7 @@ public class Application {
 	 */
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		
-		System.out.println(Requetes.getCategorieById(3));
+		//System.out.println(Requetes.getCategorieById(3));
 	}
 
 }

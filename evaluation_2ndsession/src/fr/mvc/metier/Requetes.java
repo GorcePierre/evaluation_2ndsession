@@ -62,7 +62,7 @@ public class Requetes {
 
 	/**
 	 * M�thode pour retourner tous les apprenants dans un tableau
-	 * 
+	 *
 	 * @return
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
