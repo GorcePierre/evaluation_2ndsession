@@ -2,3 +2,5 @@
 
 *.class
 
+.gitignore evaluation_2ndsession
+
