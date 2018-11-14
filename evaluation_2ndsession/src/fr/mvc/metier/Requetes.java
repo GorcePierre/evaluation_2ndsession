@@ -99,7 +99,6 @@ public class Requetes {
 			prepStmt.executeUpdate();
 			System.out.println("l'ajout de l'avion a bien été effectuée.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			System.out.println("echec de l'ajout ");
 		}
 	
@@ -120,7 +119,6 @@ public class Requetes {
 			prepStmt.executeUpdate();
 			System.out.println("l'ajout du vol a bien été effectuée.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			System.out.println("echec de l'ajout " +e.getMessage());
 		}
 		
@@ -139,7 +137,6 @@ public class Requetes {
 			prepStmt.executeUpdate();
 			System.out.println("la modificationt de l'avion a bien été effectuée.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			System.out.println("echec de l'ajout");
 		}
 			
@@ -309,7 +306,6 @@ public class Requetes {
 			prepStmt.executeUpdate();
 			System.out.println("l'ajout de la categorie " +categorie.getName()+" a bien été effectuée.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			System.out.println("echec de l'ajout");
 		}
 	}
@@ -323,7 +319,6 @@ public class Requetes {
 			prepStmt.executeUpdate();
 			System.out.println("la modification de la categorie " +categorie.getName()+" a bien été effectuée.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			System.out.println("echec de la modification");
 		}
 	}
@@ -337,7 +332,6 @@ public class Requetes {
 			prepStmt.executeUpdate();
 			System.out.println("la suppression de la categorie " +categorie.getName()+" a bien été effectuée.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			System.out.println("echec de la suppression");
 		}
 	}
