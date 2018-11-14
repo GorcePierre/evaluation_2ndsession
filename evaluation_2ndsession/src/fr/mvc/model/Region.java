@@ -1,21 +1,20 @@
 package fr.mvc.model;
 
 /**
- * Activites
+ * Region
  */
-public class Activites {
+public class Region {
 
     private int id;
     private String name;
 
 
-    public Activites(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public Region() {
     }
 
-
-    public Activites() {
+    public Region(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public int getId() {
@@ -33,6 +32,7 @@ public class Activites {
     public void setName(String name) {
         this.name = name;
     }
+    
     @Override
     public String toString() {
         return "{" +
@@ -40,8 +40,5 @@ public class Activites {
             ", name='" + getName() + "'" +
             "}";
     }
-    
 
-
-    
 }
