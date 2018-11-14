@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import fr.mvc.model.Apprenant;
 
 import fr.mvc.connection.AccesBD;;
 
@@ -19,10 +20,9 @@ public class Requetes {
 	 */
 	public static void ajouterApprenant(Apprenant apprenant) throws SQLException {
 		PreparedStatement prepareStatement = AccesBD.getConnection()
-				.prepareStatement("INSERT INTO `apprenant` VALUES( ? , ? , ? )");
+				.prepareStatement("INSERT INTO `apprenant` VALUES( ? , ? )");
 		prepareStatement.setInt(1, apprenant.getId());
-		prepareStatement.setString(2, apprenant.getNom());
-		prepareStatement.setString(3, apprenant.getSite());
+		prepareStatement.setString(2, apprenant.getName());
 		prepareStatement.executeUpdate();
 
 	}
@@ -37,7 +37,7 @@ public class Requetes {
 		try {
 			PreparedStatement prepareStatement = AccesBD.getConnection()
 					.prepareStatement("UPDATE apprenant SET PI_NOM = ? WHERE PI_ID = ? ");
-			prepareStatement.setString(1, apprenant.getNom());
+			prepareStatement.setString(1, apprenant.getName());
 			prepareStatement.setInt(2, apprenant.getId());
 			prepareStatement.executeUpdate();
 			System.out.println("Modification effectu�e pour l' apprenant : " + apprenant);
@@ -70,11 +70,11 @@ public class Requetes {
 	public static ArrayList<Apprenant> getAllApprenant() throws ClassNotFoundException, SQLException
 
 	{
-		ArrayList<Apprenant> apprenants = new ArrayList<apprenant>();
+		ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
 		String requete = "SELECT * FROM apprenant ORDER BY PI_ID";
 		ResultSet resultat = AccesBD.executerQuery(requete);
 		while (resultat.next()) {
-			apprenant p = Mapping.mapperApprenant(resultat);
+			Apprenant p = Mapping.mapperApprenant(resultat);
 			apprenants.add(p);
 		}
 		return apprenants;

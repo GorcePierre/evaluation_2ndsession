@@ -1,33 +1,35 @@
-#------------------------------------------------------------
-#        Script MySQL.
-#------------------------------------------------------------
+-- #------------------------------------------------------------
+-- #        Script MySQL.
+-- #------------------------------------------------------------
 
 
-#------------------------------------------------------------
-# Table: Activite
-#------------------------------------------------------------
+-- #------------------------------------------------------------
+-- # Table: Activite
+-- #------------------------------------------------------------
 
 CREATE TABLE Activite(
         id_activite Int NOT NULL ,
-        nom         Varchar (50) NOT NULL
-	,CONSTRAINT Activite_PK PRIMARY KEY (id_activite)
-)ENGINE=InnoDB;
+        nom         Varchar (50) NOT NULL,
+        CONSTRAINT Activite_PK PRIMARY KEY (id_activite)
+) 
+--ENGINE=InnoDB;
 
 
-#------------------------------------------------------------
-# Table: Region
-#------------------------------------------------------------
+-- #------------------------------------------------------------
+-- # Table: Region
+-- #------------------------------------------------------------
 
 CREATE TABLE Region(
         id_region Int NOT NULL ,
         nom       Varchar (50) NOT NULL
 	,CONSTRAINT Region_PK PRIMARY KEY (id_region)
-)ENGINE=InnoDB;
+) 
+--ENGINE=InnoDB;
 
 
-#------------------------------------------------------------
-# Table: Apprenant
-#------------------------------------------------------------
+-- #------------------------------------------------------------
+-- # Table: Apprenant
+-- #------------------------------------------------------------
 
 CREATE TABLE Apprenant(
         id_apprenant  Int NOT NULL ,
@@ -40,12 +42,13 @@ CREATE TABLE Apprenant(
 	,CONSTRAINT Apprenant_PK PRIMARY KEY (id_apprenant)
 
 	,CONSTRAINT Apprenant_Region_FK FOREIGN KEY (id_region) REFERENCES Region(id_region)
-)ENGINE=InnoDB;
+) 
+--ENGINE=InnoDB;
 
 
-#------------------------------------------------------------
-# Table: Effectuer
-#------------------------------------------------------------
+-- #------------------------------------------------------------
+-- # Table: Effectuer
+-- #-----------------------------------------------------------
 
 CREATE TABLE Effectuer(
         id_activite  Int NOT NULL ,
@@ -54,5 +57,6 @@ CREATE TABLE Effectuer(
 
 	,CONSTRAINT Effectuer_Activite_FK FOREIGN KEY (id_activite) REFERENCES Activite(id_activite)
 	,CONSTRAINT Effectuer_Apprenant0_FK FOREIGN KEY (id_apprenant) REFERENCES Apprenant(id_apprenant)
-)ENGINE=InnoDB;
+) 
+--ENGINE=InnoDB;
 
