@@ -30,9 +30,9 @@ import javax.swing.JOptionPane;
 public class AccesBD {
 
 	private static String utilisateur = "root";
-	private static String motDePasse = "poupoune12";
+	private static String motDePasse = "";
 	private static String pilote = "com.mysql.cj.jdbc.Driver";
-	private static String url = "jdbc:mysql://localhost:3306/db_avion";
+	private static String url = "jdbc:mysql://localhost:3306/bd-avion?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 
 	/*
 	 * on d�clare un objet de la classe Connection de java.sql Il permet de g�rer la
