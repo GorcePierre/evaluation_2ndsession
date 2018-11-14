@@ -1,4 +1,4 @@
-package fr.bouget.model;
+package fr.mvc.model;
 
 import java.io.Serializable;
 import java.sql.Time;
@@ -139,7 +139,7 @@ public class Vol implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "Vol n° "+id+" Site départ : "+ siteDepart+" HD : "+ heureDepart+" Site arrivee : "+siteArrivee+" HA : "+ heureArrivee+"\n"+
+		return "Vol nï¿½ "+id+" Site dï¿½part : "+ siteDepart+" HD : "+ heureDepart+" Site arrivee : "+siteArrivee+" HA : "+ heureArrivee+"\n"+
 				this.avion+"\n"+
 				this.pilote+"\n";
 	}

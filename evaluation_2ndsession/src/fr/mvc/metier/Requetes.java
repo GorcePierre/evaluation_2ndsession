@@ -1,4 +1,4 @@
-package fr.bouget.metier;
+package fr.mvc.metier;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,11 +7,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.bouget.connection.AccesBD;
-import fr.bouget.model.Avion;
-import fr.bouget.model.Categorie;
-import fr.bouget.model.Pilote;
-import fr.bouget.model.Vol;
+import fr.mvc.connection.AccesBD;
+import fr.mvc.model.Avion;
+import fr.mvc.model.Categorie;
+import fr.mvc.model.Pilote;
+import fr.mvc.model.Vol;
 
 public class Requetes {
 	

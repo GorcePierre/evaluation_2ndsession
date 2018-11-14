@@ -1,7 +1,7 @@
 /**
  * Projet D�mo JDBC-SQL
  */
-package fr.bouget.main;
+package fr.mvc.main;
 
 import java.sql.SQLException;
 import java.sql.Time;
@@ -9,11 +9,11 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import fr.bouget.connection.AccesBD;
-import fr.bouget.metier.Requetes;
-import fr.bouget.model.Avion;
-import fr.bouget.model.Pilote;
-import fr.bouget.model.Vol;
+import fr.mvc.connection.AccesBD;
+import fr.mvc.metier.Requetes;
+import fr.mvc.model.Avion;
+import fr.mvc.model.Pilote;
+import fr.mvc.model.Vol;
 
 /**
  * @author Philippe

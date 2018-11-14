@@ -1,4 +1,4 @@
-package fr.bouget.model;
+package fr.mvc.model;
 
 import java.io.Serializable;
 

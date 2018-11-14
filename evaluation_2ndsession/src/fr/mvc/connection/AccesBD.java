@@ -1,4 +1,4 @@
-package fr.bouget.connection;
+package fr.mvc.connection;
 /**	=====================================================
  * @author Philippe Bouget
  *	Package : fr.bouget.connection
