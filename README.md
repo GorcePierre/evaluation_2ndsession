@@ -12,17 +12,17 @@
   
 ## 1ere journée.
   
-  mcd, mld et merise crée par Samuel Joblon.
+  mcd, mld et merise crée par SJ.
   
-  création du fichier .sql pour implementer la base de données sql par Samuel Joblon.
+  création du fichier .sql pour implementer la base de données sql par SJ.
   
   1er code review: step by step création sur jmerise du mcd, mld et .sql sur Jmerise.
    
   mise en place du schema db_Apprenant avec les tables et les columns avec utilisation de Workbench.
    
-  refactoring du fork avec création des classes par Pierre Gorce.
+  refactoring du fork avec création des classes par PG.
   
-  fin de journée, réalisation du 1er Read sur db_apprenants par Pierre Gorce.
+  fin de journée, réalisation du 1er Read sur db_apprenants par PG.
   
   ## 2eme journée.
   
@@ -30,6 +30,10 @@
   
   2eme code review: Crud.
   
-  mise en place de la db definitive.
+  mise en place de la db definitive
+  
+  creation requete pour ajouter apprenant et modifier nom par SJ.
+  
+  creation de la requete qui prend en parametre l' id region  retourner le nom de la region par PG.
   
   
