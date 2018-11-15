@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 import fr.mvc.model.*;
 import fr.mvc.connection.AccesBD;;
 
@@ -267,7 +266,6 @@ public class Requetes {
 	 * @throws ClassNotFoundException
 	 */
 	public static  void afficherApprenants() throws SQLException, ClassNotFoundException {
-		Statement statement = null;
 		ArrayList apprenants= Requetes.getAllApprenant();
 		for(int i =0; i < apprenants.size();i++ ){
 			apprenants.get(i);

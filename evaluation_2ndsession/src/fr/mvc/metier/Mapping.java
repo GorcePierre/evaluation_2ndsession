@@ -10,15 +10,6 @@ import fr.mvc.model.*;
  * @category Mapping par Programmation
  */
 public class Mapping {
-
-	/**
-	 * 
-	 */
-	public Mapping() {
-		
-	}
-	
-	
 	/**
 	 * M�thode pour instancier un objet Apprenant
 	 * 

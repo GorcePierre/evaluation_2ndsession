@@ -3,9 +3,7 @@
  */
 package fr.mvc.main;
 
-import java.sql.Date;
 import java.sql.SQLException;
-
 import fr.mvc.metier.Requetes;
 import fr.mvc.model.*;
 

@@ -1,12 +1,6 @@
 package fr.mvc.model;
 
 import java.sql.Date;
-import java.sql.SQLException;
-
-import fr.mvc.metier.Requetes;
-
-
-
 /**
  * Apprenant
  */
@@ -15,7 +9,7 @@ public class Apprenant {
     private int id;
     private String name;
     private String prenom;
-    private java.sql.Date dateDeNaissance;
+    private Date dateDeNaissance;
     private String email;
     private String photo;
     private int id_region;
@@ -100,7 +94,4 @@ public class Apprenant {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
-
-    
-
 }
