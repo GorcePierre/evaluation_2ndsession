@@ -2,6 +2,8 @@ package fr.mvc.model;
 
 import java.sql.Date;
 
+
+
 /**
  * Apprenant
  */
@@ -10,20 +12,22 @@ public class Apprenant {
     private int id;
     private String name;
     private String prenom;
-    private Date dateDeNaissance;
+    private java.sql.Date dateDeNaissance;
     private String email;
     private String photo;
-
+    private int region;
+   
     public Apprenant() {
     }
 
-    public Apprenant(int id, String name, String prenom, Date dateDeNaissance, String email, String photo) {
+    public Apprenant(int id, String name, String prenom, Date dateDeNaissance, String email, String photo, int region) {
         this.id = id;
         this.name = name;
         this.prenom = prenom;
         this.dateDeNaissance = dateDeNaissance;
         this.email = email;
         this.photo = photo;
+        this.region = region;
     }
 
     public int getId() {
@@ -74,6 +78,15 @@ public class Apprenant {
         this.photo = photo;
     }
 
+    public int getRegion() {
+        return this.region;
+    }
+
+    public void setRegion(int region) {
+        this.region = region;
+    }
+
+
     @Override
     public String toString() {
         return "{" +
@@ -83,6 +96,7 @@ public class Apprenant {
             ", dateDeNaissance='" + getDateDeNaissance() + "'" +
             ", email='" + getEmail() + "'" +
             ", photo='" + getPhoto() + "'" +
+            ", region='" + getRegion() + "'" +
             "}";
     }
 
