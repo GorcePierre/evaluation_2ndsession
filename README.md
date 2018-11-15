@@ -38,6 +38,10 @@
   
   ###### pair programming
   
-  creation qui retourne le nom et le prenom en utilisant la methode qui catch tous les apprenants.SJ&PG
+  mise en place de la methode qui retourne le nom et le prenom en utilisant la methode qui catch tous les apprenants. SJ & PG
+  
+          -----------------------------------------------------------------------------------------
+  
+  création de la methode pour afficher les activités non pratiquées. PG 
   
   
