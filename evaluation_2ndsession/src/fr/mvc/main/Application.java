@@ -48,7 +48,7 @@ public class Application {
 		// System.out.println(Requetes.getAllApprenant());
 		// System.out.println(Requetes.getAllApprenant());
 
-		Requetes.afficherApprenants();
+		//Requetes.afficherApprenants();
 		Requetes.afficherActiviteNeverdone();
 		// Requetes.apprenantsParRegion();
 

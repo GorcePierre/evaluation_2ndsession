@@ -32,7 +32,7 @@ public class Requetes {
 	}
 
 	/**
-	 * m�thode pour modifier un apprenant
+	 * m�thode pour modifier le nom d'un apprenant
 	 * 
 	 * @param apprenant
 	 * @throws SQLException
@@ -41,12 +41,7 @@ public class Requetes {
 		try {
 			PreparedStatement prepareStatement = AccesBD.getConnection()
 					.prepareStatement("UPDATE apprenant SET nom = ? WHERE id_apprenant = ? ");
-			//prepareStatement.setString(1, apprenant.getPrenom());
 			prepareStatement.setString(1, apprenant.getName());
-			//prepareStatement.setDate(3, apprenant.getDateDeNaissance());
-			//prepareStatement.setString(4, apprenant.getEmail());
-			//prepareStatement.setString(5, apprenant.getPhoto());
-			//repareStatement.setInt(6, apprenant. getRegion());
 			prepareStatement.setInt(2, apprenant.getId());
 			prepareStatement.executeUpdate();
 			System.out.println("Modification effectué pour l' apprenant : " + apprenant);
@@ -55,6 +50,13 @@ public class Requetes {
 			System.out.println("Erreur lors de la modification !");
 		}
 	}
+
+	/**
+	 * m�thode pour effacer un apprenant.
+	 * 
+	 * @param apprenant
+	 * @throws SQLException
+	 */
 
 	public static void supprimerapprenant(Apprenant apprenant) throws SQLException {
 		Statement statement = null;
@@ -72,7 +74,7 @@ public class Requetes {
 	/**
 	 * M�thode pour retourner tous les apprenants dans un tableau
 	 *
-	 * @return
+	 * @return ArrayList<Apprenant>
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
@@ -124,6 +126,13 @@ public class Requetes {
 		}
 	}
 
+	/**
+	 * m�thode pour effacer une nouvelle region
+	 * 
+	 * @param region
+	 * @throws SQLException
+	 */
+
 	public static void supprimerRegion(Region region) throws SQLException {
 		Statement statement = null;
 
@@ -140,7 +149,7 @@ public class Requetes {
 	/**
 	 * M�thode pour retourner tous les Regions dans un tableau
 	 *
-	 * @return
+	 * @return ArrayList<Region>
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
@@ -160,7 +169,7 @@ public class Requetes {
 	/**
 	 * M�thode pour retourner tous les activites dans un tableau
 	 *
-	 * @return
+	 * @return ArrayList<Activites>
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
@@ -192,7 +201,13 @@ public class Requetes {
 
 	}
 
-	// methode pour afficher region
+	/**
+	 * methode pour afficher region
+	 * @return String
+	 * @param region_id
+	 * @throws SQLException
+	 */
+
 
 	public static String afficherRegion(int region_id) throws SQLException , ClassNotFoundException{
 
@@ -207,7 +222,7 @@ public class Requetes {
 	/**
 	 * m�thode pour modifier une nouvelle activité.
 	 * 
-	 * @param apprenant
+	 * @param activite
 	 * @throws SQLException
 	 */
 	public static void modifierActivite(Activites activite) throws SQLException {
@@ -224,6 +239,13 @@ public class Requetes {
 		}
 	}
 
+	/**
+	 * m�thode pour supprimer une nouvelle activité.
+	 * 
+	 * @param activite
+	 * @throws SQLException
+	 */
+
 	public static void supprimerActivite(Activites activite) throws SQLException {
 		Statement statement = null;
 
@@ -237,6 +259,13 @@ public class Requetes {
 		}
 	}
 
+	/**
+	 * m�thode pour afficher les apprenants.
+	 * 
+	 * 
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public static  void afficherApprenants() throws SQLException, ClassNotFoundException {
 		Statement statement = null;
 		ArrayList apprenants= Requetes.getAllApprenant();
@@ -259,11 +288,13 @@ public class Requetes {
 	// 		System.out.println("Erreur lors de l'affichage");
 	// 	}
 	// }
+
 	/**
-	 * m�thode pour modifier les activités non-pratiquer.
+	 * m�thode pour créer arraylist d'activité non pratiquées.
 	 * 
-	 * @param apprenant
+	 * @returns ArrayList<Activites>
 	 * @throws SQLException
+	 * @throws ClassNotFoundException
 	 */
 
 	public static ArrayList<Activites> getActivityNeverDone() throws SQLException, ClassNotFoundException {
@@ -276,7 +307,13 @@ public class Requetes {
 		}
 		return neverDoneActivites;
 	}
-	
+
+	/**
+	 * m�thode pour afficher les activités non-pratiquer.
+	 * 
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public static void afficherActiviteNeverdone() throws SQLException, ClassNotFoundException {
 		ArrayList res = Requetes.getActivityNeverDone();
 		int i = 0;

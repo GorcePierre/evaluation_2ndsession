@@ -35,12 +35,6 @@ public class Apprenant {
     public void setId_region(int id_region) {
         this.id_region = id_region;
     }
-
-
-
-    
-
-
     public Apprenant() {
     }
 
