@@ -38,12 +38,19 @@ public class Application {
 		// Requetes.ajouterActivite(ecouterMusique);
 		// Requetes.supprimerActivite(caresserLeChat);
 		// Requetes.supprimerActivite(ecouterMusique);
-		Apprenant supplementaire = new Apprenant(18, "Moe", "DELITE", Date.valueOf("1973-10-23"), "moedelite@gmail.com", "",3);
+		// Apprenant supplementaire = new Apprenant(18, "MonNom");
 		// Requetes.ajouterApprenant(supplementaire);
-		Requetes.modifierApprenant(supplementaire);
-		System.out.println(Requetes.getAllRegion());
-		System.out.println(Requetes.getAllActivite());
-		System.out.println(Requetes.getAllApprenant());
+		// Requetes.modifierApprenant(supplementaire);
+		// Requetes.supprimerapprenant(supplementaire);
+
+		// System.out.println(Requetes.getAllRegion());
+		// System.out.println(Requetes.getAllActivite());
+		// System.out.println(Requetes.getAllApprenant());
+		// System.out.println(Requetes.getAllApprenant());
+
+		Requetes.afficherApprenants();
+		// Requetes.apprenantsParRegion();
+
 	}
 
 }

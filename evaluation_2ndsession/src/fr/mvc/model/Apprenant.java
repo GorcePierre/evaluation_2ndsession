@@ -22,15 +22,9 @@ public class Apprenant {
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", name='" + getName() + "'" +
-            ", prenom='" + getPrenom() + "'" +
-            ", dateDeNaissance='" + getDateDeNaissance() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", photo='" + getPhoto() + "'" +
-            ", region='" + getId_region() + "'" +
-            "}";
+        return 
+            getName() + " " +
+            getPrenom();
     }
     
 
@@ -50,7 +44,12 @@ public class Apprenant {
     public Apprenant() {
     }
 
-    public Apprenant(int id, String name, String prenom, Date dateDeNaissance, String email, String photo,int region) {
+    public Apprenant(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Apprenant(int id, String prenom, String name, Date dateDeNaissance, String email, String photo, int region) {
         this.id = id;
         this.name = name;
         this.prenom = prenom;
