@@ -1,0 +1,13 @@
+INSERT INTO Activite VALUES("001","Programmer en java");
+INSERT INTO Activite VALUES("002","Ecouter les mouches");
+INSERT INTO Activite VALUES("003","Jouer au bilboquet");
+INSERT INTO Activite VALUES("004","Dormir pendant le cours");
+INSERT INTO Activite VALUES("005","Chercher un stage Ã  Haiti");
+INSERT INTO Activite VALUES("006","Attendre les vacances");
+INSERT INTO Activite VALUES("007","Prendre le goÃ»ter");
+INSERT INTO Activite VALUES("008","Caresser le chat");
+INSERT INTO Activite VALUES("009","Ecouter de la musique");
+INSERT INTO Activite VALUES("010","Rien faire");
+INSERT INTO Activite VALUES("011","Jouer Ã  Angular");
+INSERT INTO Activite VALUES("012","RÃªver");
+INSERT INTO Activite VALUES("013","Travailler jour et nuit");

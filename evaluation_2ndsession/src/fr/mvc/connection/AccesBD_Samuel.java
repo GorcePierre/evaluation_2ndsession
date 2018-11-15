@@ -27,12 +27,12 @@ import javax.swing.JOptionPane;
  * connection � la Base de donn�es bd-apprenants de MySQL.
  */
 
-public class AccesBD {
+public class AccesBD_Samuel {
 
 	private static String utilisateur = "root";
-	private static String motDePasse = "";
+	private static String motDePasse = "root";
 	private static String pilote = "com.mysql.cj.jdbc.Driver";
-	private static String url = "jdbc:mysql://localhost:3306/bd-avion?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+	private static String url = "jdbc:mysql://localhost:3306/bd-apprenants?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 
 	/*
 	 * on d�clare un objet de la classe Connection de java.sql Il permet de g�rer la
@@ -46,7 +46,7 @@ public class AccesBD {
 		} catch (Exception e) {
 
 			System.out.println(e);
-			JOptionPane.showMessageDialog(null, "Pilote non valide ou introuvable !", "AccesBD",
+			JOptionPane.showMessageDialog(null, "Pilote non valide ou introuvable !", "AccesBD_Samuel",
 					JOptionPane.WARNING_MESSAGE);
 
 		}
@@ -299,7 +299,7 @@ public class AccesBD {
 	 */
 
 	public static void main(String[] args) {
-		Connection connnect = AccesBD.getConnection();
+		Connection connnect = AccesBD_Samuel.getConnection();
 		if (connnect != null) {
 			JOptionPane.showMessageDialog(null, "�a marche");
 		} else {
