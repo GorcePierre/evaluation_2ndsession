@@ -4,29 +4,36 @@
 package fr.mvc.main;
 
 import java.sql.SQLException;
-import java.sql.Time;
-import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
-import fr.mvc.connection.AccesBD;
 import fr.mvc.metier.Requetes;
+import fr.mvc.model.Region;
 
 /**
- * @author Philippe
+ * @author Pierre
  *
  */
 public class Application {
 
-	
 	/**
 	 * @param args
-	 * @throws SQLException 
-	 * @throws ClassNotFoundException 
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
 	 */
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		
-		//System.out.println(Requetes.getCategorieById(3));
+
+		// Activites regarderWakfu = new Activites(50, "regarder Wakfu");
+		// Requetes.ajouterActivite(regarderWakfu);
+		// Activites regarderWakfu = new Activites(50, "regarder mine");
+		// Requetes.modifierActivite(regarderWakfu);
+		// Requetes.supprimerActivite(regarderWakfu);
+		Region Bretagne = new Region(2, "Bretagne");
+		// Requetes.ajouterRegion(Bretagne);
+		// Region Bretagne = new Region(2, "Alsace");
+		// Requetes.modifierRegion(Bretagne);
+		// Requetes.supprimerRegion(Bretagne);
+		System.out.println(Requetes.getAllRegion());
+		System.out.println(Requetes.getAllActivite());
+		System.out.println(Requetes.getAllApprenant());
 	}
 
 }

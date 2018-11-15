@@ -8,14 +8,12 @@ public class Activites {
     private int id;
     private String name;
 
+    public Activites() {
+    }
 
     public Activites(int id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-
-    public Activites() {
     }
 
     public int getId() {
@@ -33,15 +31,10 @@ public class Activites {
     public void setName(String name) {
         this.name = name;
     }
+
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", name='" + getName() + "'" +
-            "}";
+        return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + "}";
     }
-    
 
-
-    
 }
