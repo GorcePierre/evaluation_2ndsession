@@ -49,6 +49,7 @@ public class Application {
 		// System.out.println(Requetes.getAllApprenant());
 
 		Requetes.afficherApprenants();
+		Requetes.afficherActiviteNeverdone();
 		// Requetes.apprenantsParRegion();
 
 	}
