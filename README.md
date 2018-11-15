@@ -36,4 +36,8 @@
   
   creation de la requete qui prend en parametre l' id region  retourner le nom de la region par PG.
   
+  ###### pair programming
+  
+  creation qui retourne le nom et le prenom en utilisant la methode qui catch tous les apprenants.SJ&PG
+  
   
