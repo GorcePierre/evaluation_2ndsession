@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import fr.mvc.model.*;
-import fr.mvc.connection.AccesBD;;
+import fr.mvc.connection.AccesBD;
 
 public class Requetes {
 
