@@ -3,10 +3,11 @@
  */
 package fr.mvc.main;
 
+import java.sql.Date;
 import java.sql.SQLException;
 
 import fr.mvc.metier.Requetes;
-import fr.mvc.model.Region;
+import fr.mvc.model.*;
 
 /**
  * @author Pierre
@@ -20,17 +21,26 @@ public class Application {
 	 * @throws ClassNotFoundException
 	 */
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-
+	
 		// Activites regarderWakfu = new Activites(50, "regarder Wakfu");
 		// Requetes.ajouterActivite(regarderWakfu);
 		// Activites regarderWakfu = new Activites(50, "regarder mine");
 		// Requetes.modifierActivite(regarderWakfu);
 		// Requetes.supprimerActivite(regarderWakfu);
-		Region Bretagne = new Region(2, "Bretagne");
+		// Region Bretagne = new Region(4, "Bretagne");
 		// Requetes.ajouterRegion(Bretagne);
 		// Region Bretagne = new Region(2, "Alsace");
 		// Requetes.modifierRegion(Bretagne);
 		// Requetes.supprimerRegion(Bretagne);
+		// Activites caresserLeChat  = new Activites(14, "Caresser le chat");
+		// Requetes.ajouterActivite(caresserLeChat);
+		// Activites ecouterMusique = new Activites(15, "Ecouter de la musique");
+		// Requetes.ajouterActivite(ecouterMusique);
+		// Requetes.supprimerActivite(caresserLeChat);
+		// Requetes.supprimerActivite(ecouterMusique);
+		Apprenant supplementaire = new Apprenant(18, "Moe", "DELITE", Date.valueOf("1973-10-23"), "moedelite@gmail.com", "",3);
+		// Requetes.ajouterApprenant(supplementaire);
+		Requetes.modifierApprenant(supplementaire);
 		System.out.println(Requetes.getAllRegion());
 		System.out.println(Requetes.getAllActivite());
 		System.out.println(Requetes.getAllApprenant());

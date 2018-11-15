@@ -5,6 +5,8 @@ import java.sql.SQLException;
 
 import fr.mvc.metier.Requetes;
 
+
+
 /**
  * Apprenant
  */
@@ -13,7 +15,7 @@ public class Apprenant {
     private int id;
     private String name;
     private String prenom;
-    private Date dateDeNaissance;
+    private java.sql.Date dateDeNaissance;
     private String email;
     private String photo;
     private int id_region;

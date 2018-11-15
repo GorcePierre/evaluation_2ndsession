@@ -30,4 +30,6 @@
   
   2eme code review: Crud.
   
+  mise en place de la db definitive.
+  
   
