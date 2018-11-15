@@ -1,4 +1,4 @@
-INSERT INTO effectuer (id_activite, id_apprenant) VALUES
+INSERT INTO Effectuer (id_activite, id_apprenant) VALUES
     ("1", "1"), ("3", "1"), ("5", "1"),
     ("2", "2"), ("4", "2"), ("6", "2"),
     ("7", "3"),

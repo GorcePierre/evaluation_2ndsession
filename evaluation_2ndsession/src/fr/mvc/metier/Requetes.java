@@ -19,13 +19,13 @@ public class Requetes {
 	 */
 	public static void ajouterApprenant(Apprenant apprenant) throws SQLException {
 		PreparedStatement prepareStatement = AccesBD.getConnection()
-				.prepareStatement("INSERT INTO `apprenant` VALUES( ? , ? , ? , ? , ? , ?)");
-		prepareStatement.setInt(1, apprenant.getId());
-		prepareStatement.setString(2, apprenant.getName());
-		prepareStatement.setString(3, apprenant.getPrenom());
-		prepareStatement.setDate(4, apprenant.getDateDeNaissance());
-		prepareStatement.setString(5, apprenant.getEmail());
-		prepareStatement.setString(6, apprenant.getPhoto());
+				.prepareStatement("INSERT INTO `apprenant` VALUES( ? , ? , ? , ? , ? , ?, ?)");
+		prepareStatement.setString(1, apprenant.getName());
+		prepareStatement.setString(2, apprenant.getPrenom());
+		prepareStatement.setDate(3, apprenant.getDateDeNaissance());
+		prepareStatement.setString(4, apprenant.getEmail());
+		prepareStatement.setString(5, apprenant.getPhoto());
+		prepareStatement.setInt(6, apprenant.getId_region());
 		prepareStatement.executeUpdate();
 
 	}
@@ -184,6 +184,18 @@ public class Requetes {
 		prepareStatement.setString(2, activite.getName());
 		prepareStatement.executeUpdate();
 
+	}
+
+	// methode pour afficher region
+
+	public static String afficherRegion(int region_id) throws SQLException , ClassNotFoundException{
+
+		String sql = "SELECT * FROM Region WHERE id_region =  " + region_id +" ;";
+		ResultSet resultat = AccesBD.executerQuery(sql);
+		resultat.next();
+		Region region = Mapping.mapperRegion(resultat);
+		String nomRegion = region.getName();
+		return nomRegion;
 	}
 
 	/**
