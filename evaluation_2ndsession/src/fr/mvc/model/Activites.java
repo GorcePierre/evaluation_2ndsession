@@ -11,6 +11,10 @@ public class Activites {
     public Activites() {
     }
 
+    public Activites(String name) {
+        this.name = name;
+    }
+
     public Activites(int id, String name) {
         this.id = id;
         this.name = name;

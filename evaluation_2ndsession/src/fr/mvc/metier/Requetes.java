@@ -11,14 +11,14 @@ import fr.mvc.connection.AccesBD;
 public class Requetes {
 
 	/**
-	 * M�thode ajouter un nouveau apprenant
+	 * M�thode ajouter un nouvel apprenant
 	 * 
 	 * @param apprenant
 	 * @throws SQLException
 	 */
 	public static void ajouterApprenant(Apprenant apprenant) throws SQLException {
 		PreparedStatement prepareStatement = AccesBD.getConnection()
-				.prepareStatement("INSERT INTO `apprenant` VALUES( ? , ? , ? , ? , ? , ?, ?)");
+				.prepareStatement("INSERT INTO Apprenant VALUES( ? , ? , ? , ? , ? , ?, ?)");
 		prepareStatement.setInt(1, apprenant.getId());
 		prepareStatement.setString(2, apprenant.getPrenom());
 		prepareStatement.setString(3, apprenant.getName());		
@@ -191,10 +191,24 @@ public class Requetes {
 	 * @param activite
 	 * @throws SQLException
 	 */
-	public static void ajouterActivite(Activites  activite) throws SQLException {
+	public static void ajouterActivite(Activites activite) throws SQLException {
 		PreparedStatement prepareStatement = AccesBD.getConnection()
 				.prepareStatement("INSERT INTO `Activite` VALUES(?, ?)");
 		prepareStatement.setInt(1, activite.getId());
+		prepareStatement.setString(2, activite.getName());
+		prepareStatement.executeUpdate();
+
+	}
+
+	/**
+	 * M�thode ajouter une nouvelle activité à 1 args
+	 * 
+	 * @param activite
+	 * @throws SQLException
+	 */
+	public static void ajouterActiviteUniqueArgs(Activites activite) throws SQLException {
+		PreparedStatement prepareStatement = AccesBD.getConnection()
+				.prepareStatement("INSERT INTO `Activite` VALUES( ?)");
 		prepareStatement.setString(2, activite.getName());
 		prepareStatement.executeUpdate();
 
@@ -250,7 +264,7 @@ public class Requetes {
 
 		try {
 			statement = AccesBD.getConnection().createStatement();
-			String sql = "DELETE FROM Activite WHERE id_activite=" + activite.getId();
+			String sql = "DELETE FROM Activite WHERE NOM = " +"\'" + activite.getName() + "\'";
 			statement.executeUpdate(sql);
 			System.out.println("Suppression de " + activite + " effectué");
 		} catch (SQLException e) {
@@ -312,7 +326,7 @@ public class Requetes {
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
-	public static void afficherActiviteNeverdone() throws SQLException, ClassNotFoundException {
+	public static void afficherActiviteNeverDone() throws SQLException, ClassNotFoundException {
 		ArrayList res = Requetes.getActivityNeverDone();
 		int i = 0;
 		while (i < res.size()) {
@@ -320,5 +334,34 @@ public class Requetes {
 			i++;
 		}
 		
+	}
+	/**
+	 * m�thode pour ajouter deux activités.
+	 * 
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	public static void ajouteDeuxActivites(Activites activite1, Activites activite2, Apprenant apprenant) {
+		String sql ="insert into Effectuer set id_activite = ?, id_apprenant = ?";
+		try {
+			PreparedStatement prepareStatement = AccesBD.getConnection().prepareStatement(sql);
+			prepareStatement.setInt(1, activite1.getId());
+			prepareStatement.setInt(2, apprenant.getId());
+			prepareStatement.executeUpdate();
+			System.out.println("Modification effectuée pour: " + apprenant.getName() + "en ajoutant : " + activite1.getName());
+
+		} catch (SQLException e) {
+			System.out.println("Erreur lors de la modification !");
+		}
+		try {
+			PreparedStatement prepareStatement = AccesBD.getConnection().prepareStatement(sql);
+			prepareStatement.setInt(1, activite2.getId());
+			prepareStatement.setInt(2, apprenant.getId());
+			prepareStatement.executeUpdate();
+			System.out.println("Modification effectuée pour: " + apprenant.getName() + "en ajoutant : " + activite2.getName());
+
+		} catch (SQLException e) {
+			System.out.println("Erreur lors de la modification !");
+		}
 	}
 }
