@@ -46,11 +46,13 @@ public class Application {
 		// System.out.println(Requetes.getAllRegion());
 		// System.out.println(Requetes.getAllActivite());
 		// System.out.println(Requetes.getAllApprenant());
-		// System.out.println(Requetes.getAllApprenant());
+		// System.out.println(Requetes.getAllApprenant());		
+		// System.out.println(Requetes.afficherRegion(1));
 
-		Requetes.afficherApprenants();
-		// Requetes.apprenantsParRegion();
-
+		// Requetes.afficherApprenants();
+		// Requetes.afficherApprenantsParRegion();
+		Requetes.afficherActivitesApprenants();
+		
 	}
 
 }
