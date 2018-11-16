@@ -45,6 +45,12 @@
   
           -----------------------------------------------------------------------------------------
   
-  création de la methode pour afficher les activités non pratiquées. PG 
+  création de la methode pour afficher les activités non pratiquées. PG
+  
+  création de la méthode ajouter deux activités avec un apprenant en pramètre. PG
+   
+  création afficher une liste d'apprenants avec une activité en paramètre. SJ
+  
+  création afficher la liste des activités avec un apprenant en paramètre. SJ 
   
   
