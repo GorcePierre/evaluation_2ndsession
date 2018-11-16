@@ -7,22 +7,14 @@ import fr.mvc.model.*;
 
 /**
  * @author Pierre
- * Mapping par Programmation
+ * @category Mapping par Programmation
  */
 public class Mapping {
-
-	/**
-	 * 
-	 */
-	public Mapping() {
-		
-	}
-	
-	
 	/**
 	 * M�thode pour instancier un objet Apprenant
+	 * 
 	 * @param resultat
-	 * @return
+	 * @return Apprenant
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
@@ -39,6 +31,14 @@ public class Mapping {
 		return apprenant;
 	}
 
+	/**
+	 * M�thode pour instancier un objet Activites
+	 * 
+	 * @param resultat
+	 * @return Activites
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public static Activites mapperActivite(ResultSet resultat) throws SQLException, ClassNotFoundException {
 		Activites activite = new Activites();
 		activite.setId(resultat.getInt("id_activite"));
@@ -47,6 +47,14 @@ public class Mapping {
 		return activite;
 	}
 
+	/**
+	 * M�thode pour instancier un objet Activites
+	 * 
+	 * @param resultat
+	 * @return Region
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public static Region mapperRegion(ResultSet resultat) throws SQLException, ClassNotFoundException {
 		Region region = new Region();
 		region.setId(resultat.getInt("id_region"));

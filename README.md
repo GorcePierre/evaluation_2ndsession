@@ -17,6 +17,9 @@
   création du fichier .sql pour implementer la base de données sql par SJ.
   
   1er code review: step by step création sur jmerise du mcd, mld et .sql sur Jmerise.
+  
+  ![mcd](evaluation_2ndsession/uml/MCD.png)
+  ![mld](evaluation_2ndsession/uml/MLD.png)
    
   mise en place du schema db_Apprenant avec les tables et les columns avec utilisation de Workbench.
    
@@ -38,6 +41,10 @@
   
   ###### pair programming
   
-  creation qui retourne le nom et le prenom en utilisant la methode qui catch tous les apprenants.SJ&PG
+  mise en place de la methode qui retourne le nom et le prenom en utilisant la methode qui catch tous les apprenants. SJ & PG
+  
+          -----------------------------------------------------------------------------------------
+  
+  création de la methode pour afficher les activités non pratiquées. PG 
   
   
