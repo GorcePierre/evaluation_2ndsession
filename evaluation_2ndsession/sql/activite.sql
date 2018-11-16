@@ -5,8 +5,6 @@ INSERT INTO Activite VALUES("004","Dormir pendant le cours");
 INSERT INTO Activite VALUES("005","Chercher un stage Ã  Haiti");
 INSERT INTO Activite VALUES("006","Attendre les vacances");
 INSERT INTO Activite VALUES("007","Prendre le goÃ»ter");
-INSERT INTO Activite VALUES("008","Caresser le chat");
-INSERT INTO Activite VALUES("009","Ecouter de la musique");
 INSERT INTO Activite VALUES("010","Rien faire");
 INSERT INTO Activite VALUES("011","Jouer Ã  Angular");
 INSERT INTO Activite VALUES("012","RÃªver");

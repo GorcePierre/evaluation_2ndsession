@@ -37,7 +37,7 @@ public class Apprenant {
         this.name = name;
     }
 
-    public Apprenant(int id, String prenom, String name, Date dateDeNaissance, String email, String photo, int region) {
+    public Apprenant(String prenom, String name, Date dateDeNaissance, String email, String photo, int region) {
         this.id = id;
         this.name = name;
         this.prenom = prenom;
