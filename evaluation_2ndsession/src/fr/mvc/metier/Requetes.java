@@ -228,9 +228,10 @@ public class Requetes {
 	 * @throws SQLException
 	 */
 
-	public static String afficherRegion(int region_id) throws SQLException, ClassNotFoundException {
 
-		String sql = "SELECT * FROM Region WHERE id_region =  " + region_id + " ;";
+	public static String afficherRegion(int region_id) throws SQLException , ClassNotFoundException{
+
+		String sql = "SELECT * FROM Region WHERE id_region =  " + region_id +" ;";
 		ResultSet resultat = AccesBD.executerQuery(sql);
 		resultat.next();
 		Region region = Mapping.mapperRegion(resultat);
@@ -270,7 +271,7 @@ public class Requetes {
 
 		try {
 			statement = AccesBD.getConnection().createStatement();
-			String sql = "DELETE FROM Activite WHERE NOM = " + "\'" + activite.getName() + "\'";
+			String sql = "DELETE FROM Activite WHERE NOM = " +"\'" + activite.getName() + "\'";
 			statement.executeUpdate(sql);
 			System.out.println("Suppression de " + activite + " effectué");
 		} catch (SQLException e) {
@@ -285,9 +286,11 @@ public class Requetes {
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
-	public static void afficherApprenants() throws SQLException, ClassNotFoundException {
-		ArrayList apprenants = Requetes.getAllApprenant();
-		for (int i = 0; i < apprenants.size(); i++) {
+	public static  void afficherApprenants() throws SQLException, ClassNotFoundException {
+		ArrayList apprenants= Requetes.getAllApprenant();
+		System.out.println("Voici la liste des apprenants :");
+		System.out.println();
+		for(int i =0; i < apprenants.size();i++ ){
 			apprenants.get(i);
 			System.out.println(apprenants.get(i).toString());
 		}
@@ -296,12 +299,14 @@ public class Requetes {
 
 	public static void afficherApprenantsParRegion() throws SQLException, ClassNotFoundException {
 		Statement statement = null;
-		String result = "";
-		for (int i = 1; i <= 3; i++) {
+		String result="";
+		System.out.println("Voici la liste des apprenants classée par région :");
+		System.out.println();
+		for (int i=1; i<=3; i++) {
 			result = afficherRegion(i);
-			System.out.println(result);
-			System.out.println();
-
+			System.out.println(i + "./ " + result);
+			System.out.println();		
+			
 			try {
 				statement = AccesBD.getConnection().createStatement();
 				ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
@@ -326,25 +331,51 @@ public class Requetes {
 
 	}
 
-	public static void afficherActivitesApprenants() throws SQLException, ClassNotFoundException {
+	public static void afficherActivitesParApprenant(String name) throws SQLException, ClassNotFoundException {
 		Statement statement = null;
-		String result = "";
 		try {
 			statement = AccesBD.getConnection().createStatement();
 			ArrayList<Activites> activites = new ArrayList<Activites>();
-			String requete = "select Activite.nom from Activite, Effectuer, Apprenant where (Apprenant.prenom = 'Thomas' and Effectuer.id_apprenant = Apprenant.id_apprenant and Effectuer.id_activite = Activite.id_activite)";
+			String requete = "SELECT Activite.* FROM Activite, Effectuer, Apprenant WHERE (Apprenant.nom = '"
+			+ name + "' and Effectuer.id_apprenant = Apprenant.id_apprenant and Effectuer.id_activite = Activite.id_activite)";
 			ResultSet resultat = AccesBD.executerQuery(requete);
 			while (resultat.next()) {
-				Activites p = Mapping.mapperActivite(resultat);
+				Activites p = Mapping.mapperActivite (resultat);
 				activites.add(p);
-				for (int j = 0; j < activites.size(); j++) {
-					System.out.println(activites.get(j).toString());
-				}
 			}
+			System.out.println("Voici les activités de l'apprenant " + name);
+			System.out.println(activites);
+
 		} catch (SQLException e) {
 			System.out.println("Erreur lors de l'affichage");
 		}
+	}
 
+	public static void afficherApprenantsParActivite(String nomActivite) throws SQLException, ClassNotFoundException {
+		Statement statement = null;
+		try {
+			statement = AccesBD.getConnection().createStatement();
+			ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
+			String requete = "select apprenant.* from apprenant, effectuer, activite where (activite.nom = '" + nomActivite + "' and effectuer.id_apprenant = apprenant.id_apprenant and effectuer.id_activite = activite.id_activite)";
+			ResultSet resultat = AccesBD.executerQuery(requete);
+			while (resultat.next()) {
+				Apprenant p = Mapping.mapperApprenant(resultat);
+				apprenants.add(p);
+			}
+
+			System.out.println("Voici la liste des apprenants qui ont pour activite " + nomActivite + " :");
+			System.out.println();
+
+			for(int j =0; j < apprenants.size(); j++ ){
+				// apprenants.get(j);
+				System.out.println(apprenants.get(j).toString());
+			}
+			System.out.println();
+
+		} catch (SQLException e) {
+			System.out.println("Erreur lors de l'affichage");
+		}
+		
 	}
 
 	/**

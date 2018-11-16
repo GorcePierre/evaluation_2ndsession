@@ -66,6 +66,34 @@ public class Application {
 		Requetes.getAllActivite();
 		System.out.println();
 		Thread.sleep(3000);
+		//Activites regarderWakfu = new Activites( "regarder Wakfu");
+		//Requetes.ajouterActivite(regarderWakfu);
+		// Activites regarderWakfu = new Activites(50, "regarder mine");
+		// Requetes.modifierActivite(regarderWakfu);
+		//Requetes.supprimerActivite(regarderWakfu);
+		// Region Bretagne = new Region(4, "Bretagne");
+		// Requetes.ajouterRegion(Bretagne);
+		// Region Bretagne = new Region(2, "Alsace");
+		// Requetes.modifierRegion(Bretagne);
+		// Requetes.supprimerRegion(Bretagne);
+		// Activites caresserLeChat  = new Activites(14, "Caresser le chat");
+		//Requetes.ajouterActivite(caresserLeChat);
+		// Activites ecouterMusique = new Activites(15, "Ecouter de la musique");
+		//Requetes.ajouterActivite(ecouterMusique);
+		// Requetes.supprimerActivite(caresserLeChat);
+		// Requetes.supprimerActivite(ecouterMusique);
+		// Apprenant supplementaire = new Apprenant(119, "MonNom","toto",Date.valueOf("1972-04-23"), "laurent@laposte.fr","photo", 1);
+		// Requetes.ajouterApprenant(supplementaire);
+		//Activites caresserLeChat  = new Activites(14, "Caresser le chat");
+		//Requetes.ajouterActivite(caresserLeChat);
+		//Activites ecouterMusique = new Activites(15, "Ecouter de la musique");
+		//Requetes.ajouterActivite(ecouterMusique);
+		// Requetes.supprimerActivite(caresserLeChat);
+		// Requetes.supprimerActivite(ecouterMusique);
+		//Apprenant supplementaire = new Apprenant(119, "MonNom","toto",Date.valueOf("1972-04-23"), "laurent@laposte.fr","photo", 1);
+		//Requetes.ajouterApprenant(supplementaire);
+		// Requetes.modifierApprenant(supplementaire);
+		// Requetes.supprimerapprenant(supplementaire);
 
 		System.out.println();
 		System.out.println("7eme partie: afficher les activités que personne ne pratique");
@@ -87,5 +115,20 @@ public class Application {
 		Thread.sleep(3000);
 		Requetes.supprimerapprenant(toto);
 		
+
+		//Requetes.afficherApprenants();
+		//Requetes.afficherActiviteNeverDone();
+		//Requetes.ajouteDeuxActivites(caresserLeChat, ecouterMusique, supplementaire);
+		//Requetes.afficherActiviteNeverDone();
+		// Requetes.apprenantsParRegion();
+
+		// Requetes.afficherApprenants();
+		// Requetes.afficherActiviteNeverDone();
+		// Requetes.ajouteDeuxActivites(caresserLeChat, ecouterMusique, supplementaire);
+		// Requetes.afficherActiviteNeverDone();
+		Requetes.afficherApprenants();
+		Requetes.afficherApprenantsParRegion();
+		Requetes.afficherActivitesParApprenant("JOBLON");
+		Requetes.afficherApprenantsParActivite("Programmer en java");
 	}
 }
