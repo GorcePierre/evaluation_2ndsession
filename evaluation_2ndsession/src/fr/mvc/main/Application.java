@@ -32,14 +32,14 @@ public class Application {
 		// Region Bretagne = new Region(2, "Alsace");
 		// Requetes.modifierRegion(Bretagne);
 		// Requetes.supprimerRegion(Bretagne);
-		Activites caresserLeChat  = new Activites(14, "Caresser le chat");
+		// Activites caresserLeChat  = new Activites(14, "Caresser le chat");
 		//Requetes.ajouterActivite(caresserLeChat);
-		Activites ecouterMusique = new Activites(15, "Ecouter de la musique");
+		// Activites ecouterMusique = new Activites(15, "Ecouter de la musique");
 		//Requetes.ajouterActivite(ecouterMusique);
 		// Requetes.supprimerActivite(caresserLeChat);
 		// Requetes.supprimerActivite(ecouterMusique);
-		Apprenant supplementaire = new Apprenant(119, "MonNom","toto",Date.valueOf("1972-04-23"), "laurent@laposte.fr","photo", 1);
-		Requetes.ajouterApprenant(supplementaire);
+		// Apprenant supplementaire = new Apprenant(119, "MonNom","toto",Date.valueOf("1972-04-23"), "laurent@laposte.fr","photo", 1);
+		// Requetes.ajouterApprenant(supplementaire);
 		// Requetes.modifierApprenant(supplementaire);
 		// Requetes.supprimerapprenant(supplementaire);
 
@@ -50,16 +50,16 @@ public class Application {
 		// System.out.println(Requetes.afficherRegion(1));
 		// System.out.println(Requetes.getAllApprenant());
 
-		//Requetes.afficherApprenants();
-		Requetes.afficherActiviteNeverDone();
-		Requetes.ajouteDeuxActivites(caresserLeChat, ecouterMusique, supplementaire);
-		Requetes.afficherActiviteNeverDone();
-		// Requetes.apprenantsParRegion();
+
 
 		// Requetes.afficherApprenants();
-		// Requetes.afficherApprenantsParRegion();
-		Requetes.afficherActivitesApprenants();
-		
+		// Requetes.afficherActiviteNeverDone();
+		// Requetes.ajouteDeuxActivites(caresserLeChat, ecouterMusique, supplementaire);
+		// Requetes.afficherActiviteNeverDone();
+		Requetes.afficherApprenants();
+		Requetes.afficherApprenantsParRegion();
+		Requetes.afficherActivitesParApprenant("JOBLON");
+		Requetes.afficherApprenantsParActivite("Programmer en java");
 	}
 
 }

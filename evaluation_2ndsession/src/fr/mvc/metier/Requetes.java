@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import fr.mvc.model.*;
-import fr.mvc.connection.AccesBD;
+import fr.mvc.connection.AccesBD_Samuel;
 
 public class Requetes {
 
@@ -17,7 +17,7 @@ public class Requetes {
 	 * @throws SQLException
 	 */
 	public static void ajouterApprenant(Apprenant apprenant) throws SQLException {
-		PreparedStatement prepareStatement = AccesBD.getConnection()
+		PreparedStatement prepareStatement = AccesBD_Samuel.getConnection()
 				.prepareStatement("INSERT INTO Apprenant VALUES( ? , ? , ? , ? , ? , ?, ?)");
 		prepareStatement.setInt(1, apprenant.getId());
 		prepareStatement.setString(2, apprenant.getPrenom());
@@ -38,7 +38,7 @@ public class Requetes {
 	 */
 	public static void modifierApprenant(Apprenant apprenant) throws SQLException {
 		try {
-			PreparedStatement prepareStatement = AccesBD.getConnection()
+			PreparedStatement prepareStatement = AccesBD_Samuel.getConnection()
 					.prepareStatement("UPDATE apprenant SET nom = ? WHERE id_apprenant = ? ");
 			prepareStatement.setString(1, apprenant.getName());
 			prepareStatement.setInt(2, apprenant.getId());
@@ -61,7 +61,7 @@ public class Requetes {
 		Statement statement = null;
 
 		try {
-			statement = AccesBD.getConnection().createStatement();
+			statement = AccesBD_Samuel.getConnection().createStatement();
 			String sql = "DELETE FROM Apprenant WHERE id_apprenant=" + apprenant.getId();
 			statement.executeUpdate(sql);
 			System.out.println("Suppression de " + apprenant + " effectué");
@@ -82,7 +82,7 @@ public class Requetes {
 	{
 		ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
 		String requete = "SELECT * FROM Apprenant ORDER  BY nom";
-		ResultSet resultat = AccesBD.executerQuery(requete);
+		ResultSet resultat = AccesBD_Samuel.executerQuery(requete);
 		while (resultat.next()) {
 			Apprenant p = Mapping.mapperApprenant(resultat);
 			apprenants.add(p);
@@ -97,7 +97,7 @@ public class Requetes {
 	 * @throws SQLException
 	 */
 	public static void ajouterRegion(Region region) throws SQLException {
-		PreparedStatement prepareStatement = AccesBD.getConnection()
+		PreparedStatement prepareStatement = AccesBD_Samuel.getConnection()
 				.prepareStatement("INSERT INTO `Region` VALUES(? , ?)");
 		prepareStatement.setInt(1, region.getId());
 		prepareStatement.setString(2, region.getName());
@@ -113,7 +113,7 @@ public class Requetes {
 	 */
 	public static void modifierRegion(Region region) throws SQLException {
 		try {
-			PreparedStatement prepareStatement = AccesBD.getConnection()
+			PreparedStatement prepareStatement = AccesBD_Samuel.getConnection()
 					.prepareStatement("UPDATE Region SET nom = ? WHERE id_region= ? ");
 			prepareStatement.setString(1, region.getName());
 			prepareStatement.setInt(2, region.getId());
@@ -136,7 +136,7 @@ public class Requetes {
 		Statement statement = null;
 
 		try {
-			statement = AccesBD.getConnection().createStatement();
+			statement = AccesBD_Samuel.getConnection().createStatement();
 			String sql = "DELETE FROM Region WHERE id_region=" + region.getId();
 			statement.executeUpdate(sql);
 			System.out.println("Suppression de " + region + " effectué");
@@ -157,7 +157,7 @@ public class Requetes {
 	{
 		ArrayList<Region> regions = new ArrayList<Region>();
 		String requete = "SELECT * FROM Region ORDER  BY nom";
-		ResultSet resultat = AccesBD.executerQuery(requete);
+		ResultSet resultat = AccesBD_Samuel.executerQuery(requete);
 		while (resultat.next()) {
 			Region p = Mapping.mapperRegion(resultat);
 			regions.add(p);
@@ -177,7 +177,7 @@ public class Requetes {
 	{
 		ArrayList<Activites> activites = new ArrayList<Activites>();
 		String requete = "SELECT * FROM Activite ORDER  BY nom";
-		ResultSet resultat = AccesBD.executerQuery(requete);
+		ResultSet resultat = AccesBD_Samuel.executerQuery(requete);
 		while (resultat.next()) {
 			Activites p = Mapping.mapperActivite (resultat);
 			activites.add(p);
@@ -192,7 +192,7 @@ public class Requetes {
 	 * @throws SQLException
 	 */
 	public static void ajouterActivite(Activites activite) throws SQLException {
-		PreparedStatement prepareStatement = AccesBD.getConnection()
+		PreparedStatement prepareStatement = AccesBD_Samuel.getConnection()
 				.prepareStatement("INSERT INTO `Activite` VALUES(?, ?)");
 		prepareStatement.setInt(1, activite.getId());
 		prepareStatement.setString(2, activite.getName());
@@ -207,7 +207,7 @@ public class Requetes {
 	 * @throws SQLException
 	 */
 	public static void ajouterActiviteUniqueArgs(Activites activite) throws SQLException {
-		PreparedStatement prepareStatement = AccesBD.getConnection()
+		PreparedStatement prepareStatement = AccesBD_Samuel.getConnection()
 				.prepareStatement("INSERT INTO `Activite` VALUES( ?)");
 		prepareStatement.setString(2, activite.getName());
 		prepareStatement.executeUpdate();
@@ -225,7 +225,7 @@ public class Requetes {
 	public static String afficherRegion(int region_id) throws SQLException , ClassNotFoundException{
 
 		String sql = "SELECT * FROM Region WHERE id_region =  " + region_id +" ;";
-		ResultSet resultat = AccesBD.executerQuery(sql);
+		ResultSet resultat = AccesBD_Samuel.executerQuery(sql);
 		resultat.next();
 		Region region = Mapping.mapperRegion(resultat);
 		String nomRegion = region.getName();
@@ -240,7 +240,7 @@ public class Requetes {
 	 */
 	public static void modifierActivite(Activites activite) throws SQLException {
 		try {
-			PreparedStatement prepareStatement = AccesBD.getConnection()
+			PreparedStatement prepareStatement = AccesBD_Samuel.getConnection()
 					.prepareStatement("UPDATE Activite SET nom = ? WHERE id_activite = ? ");
 			prepareStatement.setString(1, activite.getName());
 			prepareStatement.setInt(2, activite.getId());
@@ -263,7 +263,7 @@ public class Requetes {
 		Statement statement = null;
 
 		try {
-			statement = AccesBD.getConnection().createStatement();
+			statement = AccesBD_Samuel.getConnection().createStatement();
 			String sql = "DELETE FROM Activite WHERE NOM = " +"\'" + activite.getName() + "\'";
 			statement.executeUpdate(sql);
 			System.out.println("Suppression de " + activite + " effectué");
@@ -281,6 +281,8 @@ public class Requetes {
 	 */
 	public static  void afficherApprenants() throws SQLException, ClassNotFoundException {
 		ArrayList apprenants= Requetes.getAllApprenant();
+		System.out.println("Voici la liste des apprenants :");
+		System.out.println();
 		for(int i =0; i < apprenants.size();i++ ){
 			apprenants.get(i);
 			System.out.println(apprenants.get(i).toString());
@@ -291,9 +293,11 @@ public class Requetes {
 	public static void afficherApprenantsParRegion() throws SQLException, ClassNotFoundException {
 		Statement statement = null;
 		String result="";
+		System.out.println("Voici la liste des apprenants classée par région :");
+		System.out.println();
 		for (int i=1; i<=3; i++) {
 			result = afficherRegion(i);
-			System.out.println(result);
+			System.out.println(i + "./ " + result);
 			System.out.println();		
 			
 			try {
@@ -320,33 +324,50 @@ public class Requetes {
 		
 	}
 
-	public static void afficherActivitesApprenants() throws SQLException, ClassNotFoundException {
+	public static void afficherActivitesParApprenant(String name) throws SQLException, ClassNotFoundException {
 		Statement statement = null;
-		String result="";
-			
-			
-			try {
-				statement = AccesBD_Samuel.getConnection().createStatement();
-				ArrayList<Activites> activites = new ArrayList<Activites>();
-				String requete = "select activite.nom from activite, effectuer, apprenant where (apprenant.prenom = 'Thomas' and effectuer.id_apprenant = apprenant.id_apprenant and effectuer.id_activite = activite.id_activite)";
-				ResultSet resultat = AccesBD_Samuel.executerQuery(requete);
-				while (resultat.next()) {
+		try {
+			statement = AccesBD_Samuel.getConnection().createStatement();
+			ArrayList<Activites> activites = new ArrayList<Activites>();
+			String requete = "SELECT Activite.* FROM Activite, Effectuer, Apprenant WHERE (Apprenant.nom = '"
+			+ name + "' and Effectuer.id_apprenant = Apprenant.id_apprenant and Effectuer.id_activite = Activite.id_activite)";
+			ResultSet resultat = AccesBD_Samuel.executerQuery(requete);
+			while (resultat.next()) {
 				Activites p = Mapping.mapperActivite (resultat);
 				activites.add(p);
-				for(int j =0; j < activites.size(); j++ ){
-					System.out.println(activites.get(j).toString());
-				}
-				// System.out.println(activites);
 			}
-		
+			System.out.println("Voici les activités de l'apprenant " + name);
+			System.out.println(activites);
 
-				
+		} catch (SQLException e) {
+			System.out.println("Erreur lors de l'affichage");
+		}
+	}
 
-			} catch (SQLException e) {
-				System.out.println("Erreur lors de l'affichage");
+	public static void afficherApprenantsParActivite(String nomActivite) throws SQLException, ClassNotFoundException {
+		Statement statement = null;
+		try {
+			statement = AccesBD_Samuel.getConnection().createStatement();
+			ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
+			String requete = "select apprenant.* from apprenant, effectuer, activite where (activite.nom = '" + nomActivite + "' and effectuer.id_apprenant = apprenant.id_apprenant and effectuer.id_activite = activite.id_activite)";
+			ResultSet resultat = AccesBD_Samuel.executerQuery(requete);
+			while (resultat.next()) {
+				Apprenant p = Mapping.mapperApprenant(resultat);
+				apprenants.add(p);
 			}
 
-				
+			System.out.println("Voici la liste des apprenants qui ont pour activite " + nomActivite + " :");
+			System.out.println();
+
+			for(int j =0; j < apprenants.size(); j++ ){
+				// apprenants.get(j);
+				System.out.println(apprenants.get(j).toString());
+			}
+			System.out.println();
+
+		} catch (SQLException e) {
+			System.out.println("Erreur lors de l'affichage");
+		}
 		
 	}
 
@@ -360,7 +381,7 @@ public class Requetes {
 
 	public static ArrayList<Activites> getActivityNeverDone() throws SQLException, ClassNotFoundException {
 		String sql = "select Activite.id_activite,Activite.nom from Activite left join Effectuer on Activite.id_activite = Effectuer.id_activite where Effectuer.id_activite is null";
-		ResultSet res = AccesBD.executerQuery(sql);
+		ResultSet res = AccesBD_Samuel.executerQuery(sql);
 		ArrayList<Activites> neverDoneActivites = new ArrayList<Activites>();
 		while (res.next()) {
 		Activites activite = Mapping.mapperActivite(res);
@@ -393,7 +414,7 @@ public class Requetes {
 	public static void ajouteDeuxActivites(Activites activite1, Activites activite2, Apprenant apprenant) {
 		String sql ="insert into Effectuer set id_activite = ?, id_apprenant = ?";
 		try {
-			PreparedStatement prepareStatement = AccesBD.getConnection().prepareStatement(sql);
+			PreparedStatement prepareStatement = AccesBD_Samuel.getConnection().prepareStatement(sql);
 			prepareStatement.setInt(1, activite1.getId());
 			prepareStatement.setInt(2, apprenant.getId());
 			prepareStatement.executeUpdate();
@@ -403,7 +424,7 @@ public class Requetes {
 			System.out.println("Erreur lors de la modification !");
 		}
 		try {
-			PreparedStatement prepareStatement = AccesBD.getConnection().prepareStatement(sql);
+			PreparedStatement prepareStatement = AccesBD_Samuel.getConnection().prepareStatement(sql);
 			prepareStatement.setInt(1, activite2.getId());
 			prepareStatement.setInt(2, apprenant.getId());
 			prepareStatement.executeUpdate();
